@@ -1,5 +1,9 @@
 # Welcome to your Expo app 👋
 
+## 参考にした動画
+React Native Course for Beginners in 2025 | Build a Full Stack React Native App  
+https://www.youtube.com/watch?v=f8Z9JyB2EIE
+
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
