@@ -1,5 +1,6 @@
 import logo from '@/assets/icons/logo.png'
 import SearchBar from '@/components/SearchBar'
+import { updateSearchCount } from '@/services/appwrite'
 import { useRouter } from 'expo-router'
 import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native'
@@ -25,10 +26,14 @@ const search = () => {
     const timeoutId = setTimeout(async () => {
       if (searchQuery.trim()) {
         await loadMovies()
+
+        if (movies?.length && movies[0]) {
+          await updateSearchCount(searchQuery, movies[0])
+        }
       } else {
         reset()
       }
-    }, 300)
+    }, 500)
 
     return () => clearTimeout(timeoutId)
   }, [searchQuery])
